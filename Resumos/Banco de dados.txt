@@ -1,0 +1,33 @@
+Banco de dados
+
+SGBDs
+padrão de armazenamento de dados
+
+Relacionais (foco confiabilidade)
+-SQL server - SGBDs
+-Oracle
+-MySQL
+
+NoSQL(grande quantidade e performace)
+-MongoDB
+-Neo4j
+-Firebase
+
+----------Relacional------
+coluna - infomações do registro
+linha  - registro
+
+atomicidade
+não deixa ocorrer erros no banco 
+que respeitem as regras antes de gravar no disco
+
+ConsistÊncia dados
+uma operação de cada vez distribuindo em todas as bases, até chegar em todas as bases ele não libera ooutra operação
+----------
+
+
+Criando primeiras consultas********
+
+select getdata()
+go
+retorna dt

@@ -1,0 +1,155 @@
+criando banco*
+create database nomeDoBanco 
+
+criando tabela*
+create table Teste
+(
+	Descricao varchar(50) null,
+	Complemento char(10) not null
+)
+
+
+tipos de váriáveis 
+int e bigint - num inteiro, bigint guarda maior
+
+varchar alfanumericos- mais lento na busca
+
+char tamanho fixo
+
+bit - 0 e 1
+
+null e not null, aceita e não aceita null
+
+flot ponto, casas decimais, preços
+
+select * from Clientes - selecionando tabela
+
+
+Formas de inserir
+
+insert into Clientes (Codigo, Nome, TipoPessoa) values (1, 'Tiago' , 'F');
+insert Clientes(Codigo, Nome, TipoPessoa) values (2, 'Tiago', 'F');
+insert Clientes(TipoPessoa, Codigo, Nome) values ('F', 3, 'Tiago');
+insert Clientes values (4,'Tiago', 'F');
+insert Clientes values (5,'Tiago', 'F'), (6,'Tiago', 'F'), (7,'Felipão', 'J');
+
+olhar colunas 
+select Nome from Clientes
+
+seleciona tab quando tem uma condição
+select *
+from Clientes
+where TipoPessoa = 'J' 
+
+Modifica linha da tabela
+update Clientes
+set 	Codigo = 7,
+	Nome = 'José'
+where TipoPessoa = 'J'
+
+
+update e delete sem where atualiza todos os clientes
+
+delete 
+from Clientes     Exclui todas as informações da tabela
+
+adicionando where vc seleciona só o que quer excluir
+
+EX
+
+delete 
+from Clientes 
+where TipoPessoa = "F"   exclui todos tipo F
+
+
+usa-se AND e OR tbm junto com where 
+
+*colocando pedidos no banco*
+
+select * from Clientes
+
+select * from Produtos
+
+select * from Pedido
+
+insert Pedido values(1, getdate(), 0, 3, 7)
+
+select * 
+from PedidoItem 
+
+insert PedidoItem values(1, 1, 1.5, 2)
+
+---------------------------------------------------------
+
+Se Datacriacao for null retorno hora atual
+select  Isnull( DataCriacao, getdate()), * 
+from Clientes
+
+consulta com defiinições
+
+select  *,
+		case
+			when TipoPessoa = 'J'  then 'Juridica'
+			when TipoPessoa = 'F'  then 'Física'
+			else 'Pessoa indefinida'
+	 	end
+from Clientes
+
+
+convertendo dados
+select *, convert(varchar, DataSolicitacao, 103)
+from Pedido
+----------------------------------------------------------------------
+chave primaria identifica um registro de forma unica, facilita a busca
+
+estrangeira vai fazer relação entre tabelas
+---
+tornando uma coluna como primary key
+alter table Clientes add constraint pk_cliente primary key (Codigo)
+
+incremento de 1 em 1 em especificação de identidade
+
+---------------------------------------
+
+chave estrangeira aponta para primária de outra tabela
+sempre será uma cópia de uma chave primária
+-------------------------------------
+
+alter table Pedido add CodigoStatus int (adicionando coluna na tabela)
+
+update Pedido set codigostatus =1 , descstatus = 'Em andamento' (preenchendo linhas da tabela)
+
+----------------------------------------------------------------------
+
+inner join
+left   join = todas as informações a tabela a esquerda
+right join = todas as informações a tabela a direita
+se tiver info do outro lado tras tbm
+
+Select * from Clientes cli
+inner join Pedido ped
+on     cli.Codigo = ped.CodigoCliente  //vai montrar todos os pedidos que tem cod do cliente
+
+se quiser colocar filtro é só add no final and ou where ped.Total pedido >10
+
+select *
+from Cliente cli //adiciona apelido
+
+where cli.Cliente in ou not in( select codigoCliente from Pedido) Todos os campos que tem ou não tem Pedido
+
+--------------------
+
+contar quantos pedidos
+select cli.Cliente,
+	cli.nome,
+	count(ped.Codigo)
+from Clientes cli
+left join Pedido.ped
+on	cli.Codigo = ped.CodigoCliente
+group       by cli.Codigo   ////// agrupar informações
+	cli.Nome
+
+count(ped.Codigo)
+
+
+where filtra linhas having agregações

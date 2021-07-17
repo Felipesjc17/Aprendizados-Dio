@@ -1,0 +1,51 @@
+echo devolve a string
+openssl sha1 = criptografa o código
+Ex
+echo "ola mundo" | openssl sha1 
+vai aparecer uma chave criptografada de "ola mundo"
+
+git init cria um repositorio
+
+git status - informações dos arquivos não commitados
+
+git add nomearquivo pasta/
+
+mkdir pastaCriação
+
+mv arquivoMovido ./pastaMover/
+
+comando git
+untracker>unmodified>modified >Stage
+adiciona>>>>>>>>>>>>>>>>>>>>>>>>
+	edita>>>>>>
+		  Stage Arq>>>>
+             <<<remove
+	       <<<<<<<<<<<<commit
+
+echo > CriarArquivo.txt
+
+git add *  pega tudo q foi modificado
+git commit -m "adiciona motivo das alterações" envelopa os arquivos com essa mensagem
+
+
+dir trab >>git add>> staging>>git commit -m>> repos local
+
+entrar = git config --global user.email "felipe_sjc17@hotmail.com"
+git config --global user.nickname "felipesjc17"
+
+adicionando depois de criar repositório no site 
+git remote add origin https://github.com/Felipesjc17/Aula.git
+
+git remote -v
+checando repositorio remotogit
+
+monstrando conta = $ git config --list
+
+git config --global --unset user.name = sai do usuário(pode fazer com email)
+
+ git push origin master /empurrar arquivo para remoto
+ git pull origin master /puxar arquivo para remoto
+
+marrge conflict = conflito de versão
+
+git clone e url baixar cod
