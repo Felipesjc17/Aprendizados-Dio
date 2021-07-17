@@ -1,0 +1,28 @@
+Programa.java>
+Compilador>
+Programa.class>
+JVM>
+codigo binário
+
+
+Java não está presa a SOs ou hardware
+rodam em Maquinas virtuais
+em qualquer que posso rodar JRE
+
+Java SE - base da plataforma
+Java EE - des. web
+Java ME - dipositivos moveis e embarcados(dispositivos q tem uma função só)
+
+Codigo >
+JDK kit de des. compila para bytecode(.java) em .class >
+ JVM lê .class e as bibliotecas JRE 
+
+
+OpenJDK aberto
+JDK Oracle requer licença 
+
+LTS longo suporte
+
+IDE interface grafica q escreve os códigos 
+Eclipse e Intellij
+
